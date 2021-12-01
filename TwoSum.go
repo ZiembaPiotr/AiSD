@@ -1,9 +1,5 @@
 package Leetcode
 
-func main(){
-	
-}
-
 func twoSum(nums []int, target int) []int{
 	valueIndexMap := make(map[int]int)
 
