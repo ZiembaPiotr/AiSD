@@ -4,7 +4,7 @@ func twoSum(nums []int, target int) []int{
 	valueIndexMap := make(map[int]int)
 
 	for i, num := range nums {
-		if pos, ok := valueIndexMap[target - num]; ok{
+		if pos, exist := valueIndexMap[target - num]; exist{
 			return []int{pos, i}
 		} else {
 			valueIndexMap[num] = i
