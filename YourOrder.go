@@ -1,6 +1,8 @@
 func Order(sentence string) string {
-  c
-
+  if sentence == "" {
+    return ""
+  }
+  
   orderedArray := makeOrderedArray(sentence)
   solution := concateString(orderedArray)
 
