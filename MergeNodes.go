@@ -1,3 +1,5 @@
+// dummy
+
 func mergeNodes(head *ListNode) *ListNode {
     var partSum int
     var sumArray []int
@@ -30,4 +32,30 @@ func mergeNodes(head *ListNode) *ListNode {
     }
     
     return merged
+}
+
+// less dummy
+
+
+func mergeNodes(head *ListNode) *ListNode {
+    var partSum int
+    
+    merged := &ListNode{}
+    prevNode := merged
+    
+    for head.Next != nil {
+        partSum += head.Val
+        
+        if head.Val == 0 {
+            prevNode.Next = &ListNode{partSum, nil}
+            prevNode = prevNode.Next
+            partSum = 0
+        }
+
+        head = head.Next
+    }
+    
+    prevNode.Next = &ListNode{partSum, nil}
+    
+    return merged.Next.Next
 }
