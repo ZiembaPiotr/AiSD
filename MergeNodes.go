@@ -1,8 +1,8 @@
 func mergeNodes(head *ListNode) *ListNode {
     var partSum int
     var sumArray []int
-    merged := new(ListNode)
-    prevNode := new(ListNode)
+    merged := &ListNode{}
+    prevNode := &ListNode{}
     
     iterator := head.Next
     
@@ -15,8 +15,7 @@ func mergeNodes(head *ListNode) *ListNode {
     }
     
     for i, sum := range sumArray {
-        newNode := new(ListNode)
-        newNode.Val = sum
+        newNode := &ListNode{sum, nil}
         
         if i == 0 {
             merged = newNode
